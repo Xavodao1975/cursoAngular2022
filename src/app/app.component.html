@@ -1,2 +1,21 @@
 <P>HOLA MARCOS QUE TAL TE VA</P>
-<app-user></app-user>
+<P>has seleccionado el usuario + {{usuarioaSeleccionado}}</P>
+<app-user *ngFor = "let p of personas"
+[name]="p.name" 
+[surname]="p.surname" 
+(seleccionado)="onSelect($event)">
+
+</app-user>
+<hr/>
+<app-weather city="Sevilla" [temperature]="25" status="soleado" (change)="onChange($event)"></app-weather>
+<app-weather city="Cordoba" [temperature]="35" status="soleado"  (change)="onChange($event)"></app-weather>
+    
+  <div>  
+    <ul>
+    <li  *ngFor = "let m of messages" >
+        {{m}}
+    </li>
+    </ul>
+
+ </div>
+
