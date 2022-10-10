@@ -2,11 +2,21 @@
     <label class ="tit">Ciudad</label>
     <span class ="city">{{city}}</span>
     <label class ="tit">Temperatura</label>
-    <span class ="temperature">{{temperature}}</span>
+    <span 
+    [class.calor]="temperature > 30" 
+    [class.frio]="temperature < 10"
+        class ="temperature">{{temperature}} ºC</span>
     <button (click)="subirGrado()"> +</button> 
     <button (click)="bajarGrado()"> -</button> 
 
     <label class ="tit">Status</label>
-    <span class ="status">{{status}}</span>
-    <button id ="Seleccionar"  name ="Seleccionar"> Seleccionar</button>
+    <span *ngIf="status=== 'lluvioso';
+        else bloqueSoleado" class ="status lluvioso">
+        {{status}}
+    </span>
+    <ng-template #bloqueSoleado>
+        <span *ngIf="status=== 'soleado'" class ="status soleado">
+            {{status}}
+        </span>
+    </ng-template> 
 </div>

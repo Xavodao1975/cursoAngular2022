@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
+import { LoggerService } from './services/logger.service';
 import { Persona } from './user/user.component';
 import { WeatherData } from './weather/weather';
+
 
 @Component({
   selector: 'app-root',
@@ -8,6 +10,12 @@ import { WeatherData } from './weather/weather';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
+
+
+  constructor(private logger:LoggerService) { 
+    this.logger.info('Construyendo user []');
+   }
+
   title = 'angular0';
   messages: string[]=[];
   usuarioaSeleccionado = '';

@@ -1,5 +1,5 @@
 import { Component, EventEmitter, Input, OnInit, OnDestroy, OnChanges, Output } from '@angular/core';
-
+import { LoggerService } from '../services/logger.service';
 
 export interface Persona {
   name: string;
@@ -21,8 +21,8 @@ export class UserComponent implements OnInit, OnDestroy,OnChanges {
 
   private idseq:number  = 0;
 
-  constructor() {
-    console.log('Construyendo user ['+ this.idseq);
+  constructor(private logger:LoggerService) { 
+    this.logger.info('Construyendo user ['+ this.idseq);
 
 
    }
