@@ -1,7 +1,7 @@
 name: hello-world
 on: 
   schedule:
-    - cron: '1 * * * *'
+    - cron: "*/1 * * * *" # cada minuto
 jobs:
   Schedule:
     runs-on: ubuntu-latest
