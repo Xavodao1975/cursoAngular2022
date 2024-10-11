@@ -1,9 +1,9 @@
 name: hello-world
 on: 
   schedule:
-    - cron: "*/1 * * * *" # Every Hour
+    - cron: "1 * * * *"
 jobs:
-  my-job:
+  Schedule:
     runs-on: ubuntu-latest
     steps:
       - name: my-step
