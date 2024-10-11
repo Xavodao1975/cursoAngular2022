@@ -1,6 +1,6 @@
 name: hello-world
 on: 
-  scheduler:'*/1****'
+  scheduler:'*/1 * * * *'
 jobs:
   my-job:
     runs-on: ubuntu-latest
