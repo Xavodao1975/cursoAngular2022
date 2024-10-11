@@ -1,6 +1,7 @@
 name: hello-world
 on: 
-  scheduler:'*/1 * * * *'
+  schedule:
+    - cron: "*/1 * * * *" # Every Hour
 jobs:
   my-job:
     runs-on: ubuntu-latest
